@@ -1,17 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Birthday Surprise ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(135deg, #1a0b16, #4a1638);
+
+            font-family: Arial, sans-serif;
+            color: white;
+
+            overflow: hidden;
+        }
+
+        .box {
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            padding: 50px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 0 40px rgba(255, 105, 180, 0.25);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .gift {
+            font-size: 70px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #f5d9e8;
+        }
+
+        button {
+            border: none;
+
+            padding: 15px 30px;
+
+            margin: 20px 10px;
+
+            border-radius: 30px;
+
+            font-size: 17px;
+
+            cursor: pointer;
+        }
+
+        .yes {
+            background: #ff5c93;
+            color: white;
+
+            box-shadow: 0 5px 20px rgba(255, 92, 147, 0.4);
+        }
+
+        .no {
+            background: white;
+            color: #333;
+        }
+
+        .yes:hover {
+            transform: scale(1.08);
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>I made something for you... 🎁</h1>
+    <div class="box">
 
-    <p>Do you want to see it? 👀</p>
+        <div class="gift">🎁</div>
 
-    <button>YES ❤️</button>
-    <button>NO 🙄</button>
+        <h1>I made something for you...</h1>
+
+        <p>Do you want to see it? 👀</p>
+
+        <button class="yes">YES ❤️</button>
+
+        <button class="no">NO 🙄</button>
+
+    </div>
 
 </body>
 </html>
