@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Little Surprise 💗</title>
+
+    <title>A Little Surprise ♡</title>
 
     <style>
         * {
@@ -21,48 +22,126 @@
             overflow: hidden;
         }
 
-        /* Colourful stars */
+        /* =========================
+           COLOURFUL STARS
+        ========================= */
+
         .star {
             position: fixed;
             font-size: 25px;
-            animation: float 3s ease-in-out infinite;
             user-select: none;
+            animation: twinkle 2.5s ease-in-out infinite;
+            z-index: 1;
         }
 
-        .star1  { top: 8%;  left: 12%; color: #ff6b6b; }
-        .star2  { top: 15%; left: 35%; color: #ffd43b; }
-        .star3  { top: 7%;  right: 15%; color: #74c0fc; }
-        .star4  { top: 30%; left: 7%;  color: #69db7c; }
-        .star5  { top: 27%; right: 8%; color: #da77f2; }
-        .star6  { bottom: 20%; left: 12%; color: #4dabf7; }
-        .star7  { bottom: 10%; left: 38%; color: #ff8787; }
-        .star8  { bottom: 18%; right: 12%; color: #ffd43b; }
-        .star9  { bottom: 35%; right: 5%; color: #69db7c; }
-        .star10 { top: 48%; left: 20%; color: #da77f2; }
+        .star1 {
+            top: 8%;
+            left: 10%;
+            color: #ff6b6b;
+        }
 
-        @keyframes float {
+        .star2 {
+            top: 15%;
+            left: 30%;
+            color: #ffd43b;
+            animation-delay: .5s;
+        }
+
+        .star3 {
+            top: 7%;
+            right: 15%;
+            color: #74c0fc;
+            animation-delay: 1s;
+        }
+
+        .star4 {
+            top: 30%;
+            left: 7%;
+            color: #69db7c;
+            animation-delay: 1.5s;
+        }
+
+        .star5 {
+            top: 25%;
+            right: 8%;
+            color: #da77f2;
+            animation-delay: .7s;
+        }
+
+        .star6 {
+            bottom: 20%;
+            left: 12%;
+            color: #4dabf7;
+            animation-delay: 1.2s;
+        }
+
+        .star7 {
+            bottom: 10%;
+            left: 38%;
+            color: #ff8787;
+            animation-delay: .3s;
+        }
+
+        .star8 {
+            bottom: 18%;
+            right: 12%;
+            color: #ffd43b;
+            animation-delay: 1.7s;
+        }
+
+        .star9 {
+            bottom: 35%;
+            right: 5%;
+            color: #69db7c;
+            animation-delay: .9s;
+        }
+
+        .star10 {
+            top: 50%;
+            left: 20%;
+            color: #da77f2;
+            animation-delay: 1.4s;
+        }
+
+        @keyframes twinkle {
             0%, 100% {
-                transform: translateY(0) rotate(0deg);
+                opacity: .55;
+                transform: scale(1) rotate(0deg);
             }
 
             50% {
-                transform: translateY(-8px) rotate(8deg);
+                opacity: 1;
+                transform: scale(1.2) rotate(10deg);
             }
         }
+
+
+        /* =========================
+           MAIN
+        ========================= */
 
         .container {
             width: 90%;
             max-width: 600px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: 5;
         }
 
-        /* Cute bunny */
+
+        /* =========================
+           BUNNY
+        ========================= */
+
         .bunny {
-            font-size: 100px;
-            margin-bottom: 10px;
-            animation: bunnyBounce 2s ease-in-out infinite;
+            display: block;
+            width: auto;
+            height: 300px;
+            max-width: 80vw;
+            margin: 0 auto 5px;
+            object-fit: contain;
+
+            animation: bunnyBounce 3s ease-in-out infinite;
         }
 
         @keyframes bunnyBounce {
@@ -71,37 +150,48 @@
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
             }
         }
 
+
+        /* =========================
+           TEXT
+        ========================= */
+
         h1 {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 600;
             color: #333;
-            margin: 10px 0 15px;
+            margin: 5px 0 12px;
         }
 
         p {
             font-size: 20px;
             color: #555;
-            margin: 0 0 30px;
+            margin: 0 0 28px;
         }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .buttons {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
+            min-height: 55px;
         }
 
         button {
             font-family: inherit;
             font-size: 17px;
-            padding: 12px 28px;
+            padding: 11px 27px;
             border-radius: 25px;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: transform .2s ease;
         }
 
         #yesButton {
@@ -116,38 +206,74 @@
             transform: scale(1.08);
         }
 
+        /*
+           NO starts normally beside YES.
+           JavaScript changes it to fixed
+           when it runs away.
+        */
+
         #noButton {
             background: white;
             color: #555;
             border: 2px solid #aaa;
-            position: fixed;
+            position: relative;
             z-index: 20;
         }
 
-        /* Sad cat screen */
+
+        /* =========================
+           SAD CAT SCREEN
+        ========================= */
 
         #sadScreen {
             display: none;
         }
 
-        .sad-cat {
-            width: 220px;
-            max-width: 70vw;
-            border-radius: 15px;
-            margin-bottom: 15px;
+        .cat {
+            width: 280px;
+            max-width: 75vw;
+            max-height: 45vh;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 10px;
+
+            animation: catAppear .7s ease;
+        }
+
+        @keyframes catAppear {
+            from {
+                opacity: 0;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         #finalYes {
             background: #ff8fab;
             color: white;
             border: 2px solid #ff8fab;
-            position: relative;
         }
 
-        /* Second page */
+        #finalYes:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           SECOND PAGE
+        ========================= */
 
         #pageTwo {
             display: none;
+        }
+
+        .letter {
+            font-size: 80px;
+            margin-bottom: 10px;
         }
 
         #nextButton {
@@ -156,7 +282,21 @@
             color: #ff6f91;
         }
 
+        #nextButton:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           PHONE
+        ========================= */
+
         @media (max-width: 600px) {
+
+            .bunny {
+                height: 250px;
+            }
+
             h1 {
                 font-size: 25px;
             }
@@ -165,16 +305,24 @@
                 font-size: 18px;
             }
 
-            .bunny {
-                font-size: 80px;
+            button {
+                font-size: 16px;
+                padding: 10px 23px;
+            }
+
+            .star {
+                font-size: 20px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- Colourful stars -->
+    <!-- COLOURFUL STARS -->
+
     <div class="star star1">★</div>
     <div class="star star2">★</div>
     <div class="star star3">★</div>
@@ -189,19 +337,27 @@
 
     <div class="container">
 
-        <!-- FIRST PAGE -->
+
+        <!-- =========================
+             FIRST PAGE
+        ========================== -->
 
         <div id="firstScreen">
 
-            <div class="bunny">🐰</div>
+            <img
+                src="bunny.png"
+                class="bunny"
+                alt="Cute bunny holding flowers"
+            >
 
             <h1>
-                I made something for you. 💗
+                I made something for you. ♡
             </h1>
 
             <p>
                 Do you wanna see it?
             </p>
+
 
             <div class="buttons">
 
@@ -218,13 +374,17 @@
         </div>
 
 
-        <!-- SAD CAT PAGE -->
+        <!-- =========================
+             SAD CAT PAGE
+        ========================== -->
 
         <div id="sadScreen">
 
-            <div style="font-size: 90px;">
-                😿
-            </div>
+            <img
+                src="cat.png"
+                class="cat"
+                alt="Sad watery-eyed cat"
+            >
 
             <h1>
                 Are you sure? 🥺
@@ -241,11 +401,13 @@
         </div>
 
 
-        <!-- PAGE TWO -->
+        <!-- =========================
+             PAGE TWO
+        ========================== -->
 
         <div id="pageTwo">
 
-            <div style="font-size: 90px;">
+            <div class="letter">
                 💌
             </div>
 
@@ -254,7 +416,8 @@
             </h1>
 
             <p>
-                I made this little surprise especially for you.
+                I made this little surprise
+                especially for you.
             </p>
 
             <button id="nextButton">
@@ -266,74 +429,160 @@
     </div>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script>
 
         let noClicks = 0;
 
-        const noButton = document.getElementById("noButton");
-        const yesButton = document.getElementById("yesButton");
+        const noButton =
+            document.getElementById("noButton");
 
-        const firstScreen = document.getElementById("firstScreen");
-        const sadScreen = document.getElementById("sadScreen");
-        const pageTwo = document.getElementById("pageTwo");
+        const yesButton =
+            document.getElementById("yesButton");
 
-        const finalYes = document.getElementById("finalYes");
+        const firstScreen =
+            document.getElementById("firstScreen");
+
+        const sadScreen =
+            document.getElementById("sadScreen");
+
+        const pageTwo =
+            document.getElementById("pageTwo");
+
+        const finalYes =
+            document.getElementById("finalYes");
 
 
-        // Make NO run away when the mouse gets close
-        noButton.addEventListener("mouseenter", runAway);
-
-
-        // Also move it if he manages to click it
-        noButton.addEventListener("click", runAway);
-
+        /* =========================
+           NO BUTTON RUNS AWAY
+        ========================== */
 
         function runAway() {
 
             noClicks++;
 
-            const buttonWidth = noButton.offsetWidth;
-            const buttonHeight = noButton.offsetHeight;
+            /*
+               Change NO from its normal
+               position into a floating
+               position on the screen.
+            */
 
-            const maxX = window.innerWidth - buttonWidth - 20;
-            const maxY = window.innerHeight - buttonHeight - 20;
+            noButton.style.position = "fixed";
 
-            const randomX = Math.max(10, Math.random() * maxX);
-            const randomY = Math.max(10, Math.random() * maxY);
+            const buttonWidth =
+                noButton.offsetWidth;
 
-            noButton.style.left = randomX + "px";
-            noButton.style.top = randomY + "px";
+            const buttonHeight =
+                noButton.offsetHeight;
 
 
-            // After five attempts, show the sad screen
+            const maxX =
+                window.innerWidth -
+                buttonWidth -
+                20;
+
+            const maxY =
+                window.innerHeight -
+                buttonHeight -
+                20;
+
+
+            const randomX =
+                Math.max(
+                    10,
+                    Math.random() * maxX
+                );
+
+
+            const randomY =
+                Math.max(
+                    10,
+                    Math.random() * maxY
+                );
+
+
+            noButton.style.left =
+                randomX + "px";
+
+            noButton.style.top =
+                randomY + "px";
+
+
+            /*
+               After 5 attempts,
+               show the sad cat.
+            */
+
             if (noClicks >= 5) {
 
-                firstScreen.style.display = "none";
+                firstScreen.style.display =
+                    "none";
 
-                sadScreen.style.display = "block";
+                sadScreen.style.display =
+                    "block";
 
             }
         }
 
 
-        // YES button
-        yesButton.addEventListener("click", function() {
+        /*
+           On laptop:
+           when the mouse gets close,
+           NO runs away.
+        */
 
-            firstScreen.style.display = "none";
+        noButton.addEventListener(
+            "mouseenter",
+            runAway
+        );
 
-            pageTwo.style.display = "block";
 
-        });
+        /*
+           If he somehow manages
+           to click NO...
+        */
+
+        noButton.addEventListener(
+            "click",
+            runAway
+        );
 
 
-        // YES after sad cat
-        finalYes.addEventListener("click", function() {
+        /* =========================
+           YES
+        ========================== */
 
-            sadScreen.style.display = "none";
+        yesButton.addEventListener(
+            "click",
+            function() {
 
-            pageTwo.style.display = "block";
+                firstScreen.style.display =
+                    "none";
 
-        });
+                pageTwo.style.display =
+                    "block";
+            }
+        );
+
+
+        /* =========================
+           YES AFTER CAT
+        ========================== */
+
+        finalYes.addEventListener(
+            "click",
+            function() {
+
+                sadScreen.style.display =
+                    "none";
+
+                pageTwo.style.display =
+                    "block";
+            }
+        );
 
     </script>
 
