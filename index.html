@@ -1,114 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Surprise 💗</title>
 
-<title>A Little Surprise ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: white;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        /* Colourful stars */
+        .star {
+            position: fixed;
+            font-size: 25px;
+            animation: float 3s ease-in-out infinite;
+            user-select: none;
+        }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #fff4f8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
+        .star1  { top: 8%;  left: 12%; color: #ff6b6b; }
+        .star2  { top: 15%; left: 35%; color: #ffd43b; }
+        .star3  { top: 7%;  right: 15%; color: #74c0fc; }
+        .star4  { top: 30%; left: 7%;  color: #69db7c; }
+        .star5  { top: 27%; right: 8%; color: #da77f2; }
+        .star6  { bottom: 20%; left: 12%; color: #4dabf7; }
+        .star7  { bottom: 10%; left: 38%; color: #ff8787; }
+        .star8  { bottom: 18%; right: 12%; color: #ffd43b; }
+        .star9  { bottom: 35%; right: 5%; color: #69db7c; }
+        .star10 { top: 48%; left: 20%; color: #da77f2; }
 
-.container {
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-}
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
 
-.gift {
-    font-size: 90px;
-    margin-bottom: 15px;
-}
+            50% {
+                transform: translateY(-8px) rotate(8deg);
+            }
+        }
 
-h1 {
-    color: #d6336c;
-    font-size: 28px;
-}
+        .container {
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
-p {
-    color: #555;
-    font-size: 19px;
-}
+        /* Cute bunny */
+        .bunny {
+            font-size: 100px;
+            margin-bottom: 10px;
+            animation: bunnyBounce 2s ease-in-out infinite;
+        }
 
-.buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+        @keyframes bunnyBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
 
-button {
-    border: none;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
-}
+            50% {
+                transform: translateY(-10px);
+            }
+        }
 
-#yesButton {
-    background: #ff4f81;
-    color: white;
-}
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0 15px;
+        }
 
-#noButton {
-    background: #dddddd;
-    color: #333;
-    position: fixed;
-}
+        p {
+            font-size: 20px;
+            color: #555;
+            margin: 0 0 30px;
+        }
 
-#sadScreen {
-    display: none;
-}
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
 
-.cat {
-    font-size: 90px;
-}
+        button {
+            font-family: inherit;
+            font-size: 17px;
+            padding: 12px 28px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
 
-#finalYes {
-    background: #ff4f81;
-    color: white;
-    margin-top: 20px;
-}
+        #yesButton {
+            background: #ff8fab;
+            color: white;
+            border: 2px solid #ff8fab;
+            position: relative;
+            z-index: 10;
+        }
 
-</style>
+        #yesButton:hover {
+            transform: scale(1.08);
+        }
+
+        #noButton {
+            background: white;
+            color: #555;
+            border: 2px solid #aaa;
+            position: fixed;
+            z-index: 20;
+        }
+
+        /* Sad cat screen */
+
+        #sadScreen {
+            display: none;
+        }
+
+        .sad-cat {
+            width: 220px;
+            max-width: 70vw;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        #finalYes {
+            background: #ff8fab;
+            color: white;
+            border: 2px solid #ff8fab;
+            position: relative;
+        }
+
+        /* Second page */
+
+        #pageTwo {
+            display: none;
+        }
+
+        #nextButton {
+            background: white;
+            border: 2px solid #ff8fab;
+            color: #ff6f91;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .bunny {
+                font-size: 80px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Colourful stars -->
+    <div class="star star1">★</div>
+    <div class="star star2">★</div>
+    <div class="star star3">★</div>
+    <div class="star star4">★</div>
+    <div class="star star5">★</div>
+    <div class="star star6">★</div>
+    <div class="star star7">★</div>
+    <div class="star star8">★</div>
+    <div class="star star9">★</div>
+    <div class="star star10">★</div>
 
-    <!-- FIRST SCREEN -->
 
-    <div id="firstScreen">
+    <div class="container">
 
-        <div class="gift">🎁</div>
+        <!-- FIRST PAGE -->
 
-        <h1>I made something for you. 💌</h1>
+        <div id="firstScreen">
 
-        <p>Do you want to see it?</p>
+            <div class="bunny">🐰</div>
 
-        <div class="buttons">
+            <h1>
+                I made something for you. 💗
+            </h1>
 
-            <button id="yesButton">
-                YES ❤️
+            <p>
+                Do you wanna see it?
+            </p>
+
+            <div class="buttons">
+
+                <button id="yesButton">
+                    YES ♡
+                </button>
+
+                <button id="noButton">
+                    NO 😳
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SAD CAT PAGE -->
+
+        <div id="sadScreen">
+
+            <div style="font-size: 90px;">
+                😿
+            </div>
+
+            <h1>
+                Are you sure? 🥺
+            </h1>
+
+            <p>
+                Do you really not want to see it?
+            </p>
+
+            <button id="finalYes">
+                Okay... YES ♡
             </button>
 
-            <button id="noButton">
-                NO 😐
+        </div>
+
+
+        <!-- PAGE TWO -->
+
+        <div id="pageTwo">
+
+            <div style="font-size: 90px;">
+                💌
+            </div>
+
+            <h1>
+                I knew you'd say yes! ♡
+            </h1>
+
+            <p>
+                I made this little surprise especially for you.
+            </p>
+
+            <button id="nextButton">
+                NEXT →
             </button>
 
         </div>
@@ -116,124 +266,76 @@ button {
     </div>
 
 
-    <!-- SAD CAT SCREEN -->
+    <script>
 
-    <div id="sadScreen">
+        let noClicks = 0;
 
-        <div class="cat">
-            😿
-        </div>
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
 
-        <h1>Are you sure? 🥺</h1>
+        const firstScreen = document.getElementById("firstScreen");
+        const sadScreen = document.getElementById("sadScreen");
+        const pageTwo = document.getElementById("pageTwo");
 
-        <p>
-            Do you really not want to see it?
-        </p>
-
-        <button id="finalYes">
-            Okay... YES ❤️
-        </button>
-
-    </div>
+        const finalYes = document.getElementById("finalYes");
 
 
-    <!-- NEXT PAGE -->
-
-    <div id="pageTwo" style="display:none;">
-
-        <div style="font-size:80px;">
-            💌
-        </div>
-
-        <h1>
-            I knew you'd say yes! ❤️
-        </h1>
-
-        <p>
-            I made this little website especially for you.
-        </p>
-
-        <button id="nextButton">
-            NEXT →
-        </button>
-
-    </div>
-
-</div>
+        // Make NO run away when the mouse gets close
+        noButton.addEventListener("mouseenter", runAway);
 
 
-<script>
-
-let noClicks = 0;
-
-const noButton = document.getElementById("noButton");
-
-const yesButton = document.getElementById("yesButton");
-
-const firstScreen = document.getElementById("firstScreen");
-
-const sadScreen = document.getElementById("sadScreen");
-
-const finalYes = document.getElementById("finalYes");
-
-const pageTwo = document.getElementById("pageTwo");
+        // Also move it if he manages to click it
+        noButton.addEventListener("click", runAway);
 
 
-// NO BUTTON
+        function runAway() {
 
-noButton.addEventListener("click", function() {
+            noClicks++;
 
-    noClicks++;
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
 
-    // Move the button somewhere random
-    const maxX = window.innerWidth - noButton.offsetWidth - 20;
-    const maxY = window.innerHeight - noButton.offsetHeight - 20;
+            const maxX = window.innerWidth - buttonWidth - 20;
+            const maxY = window.innerHeight - buttonHeight - 20;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+            const randomX = Math.max(10, Math.random() * maxX);
+            const randomY = Math.max(10, Math.random() * maxY);
 
-    noButton.style.left = x + "px";
-    noButton.style.top = y + "px";
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
 
 
-    // After 5 attempts show sad cat
-    if (noClicks >= 5) {
+            // After five attempts, show the sad screen
+            if (noClicks >= 5) {
 
-        setTimeout(function() {
+                firstScreen.style.display = "none";
+
+                sadScreen.style.display = "block";
+
+            }
+        }
+
+
+        // YES button
+        yesButton.addEventListener("click", function() {
 
             firstScreen.style.display = "none";
 
-            sadScreen.style.display = "block";
+            pageTwo.style.display = "block";
 
-        }, 400);
-
-    }
-
-});
+        });
 
 
-// YES BUTTON
+        // YES after sad cat
+        finalYes.addEventListener("click", function() {
 
-yesButton.addEventListener("click", function() {
+            sadScreen.style.display = "none";
 
-    firstScreen.style.display = "none";
+            pageTwo.style.display = "block";
 
-    pageTwo.style.display = "block";
+        });
 
-});
-
-
-// SAD CAT YES BUTTON
-
-finalYes.addEventListener("click", function() {
-
-    sadScreen.style.display = "none";
-
-    pageTwo.style.display = "block";
-
-});
-
-</script>
+    </script>
 
 </body>
 </html>
