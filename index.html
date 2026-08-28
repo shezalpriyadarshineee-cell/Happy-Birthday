@@ -815,7 +815,145 @@
 .close-memories:hover {
     transform: scale(1.1);
 }
-    </style>
+
+        .music-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+    background: #fffafc;
+    overflow-y: auto;
+    z-index: 200;
+}
+
+.music-title {
+    text-align: center;
+    padding-top: 45px;
+}
+
+.music-title h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.music-title p {
+    font-size: 20px;
+}
+
+.song-box {
+    position: absolute;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.song-box:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+.song1 {
+    top: 18%;
+    left: 7%;
+    transform: rotate(-6deg);
+}
+
+.song2 {
+    top: 28%;
+    left: 35%;
+    transform: rotate(4deg);
+}
+
+.song3 {
+    top: 17%;
+    right: 6%;
+    transform: rotate(7deg);
+}
+
+.song4 {
+    top: 42%;
+    left: 8%;
+    transform: rotate(5deg);
+}
+
+.song5 {
+    top: 55%;
+    right: 7%;
+    transform: rotate(-7deg);
+}
+
+.song6 {
+    top: 70%;
+    left: 12%;
+    transform: rotate(-5deg);
+}
+
+.song7 {
+    top: 76%;
+    left: 42%;
+    transform: rotate(6deg);
+}
+
+.song8 {
+    top: 63%;
+    right: 25%;
+    transform: rotate(-4deg);
+}
+
+.song9 {
+    top: 87%;
+    right: 7%;
+    transform: rotate(8deg);
+}
+
+.music-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 45px;
+    text-align: center;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+    z-index: 5;
+}
+
+.music-note {
+    font-size: 55px;
+}
+
+.music-player h2 {
+    font-size: 28px;
+    margin: 15px 0 25px;
+}
+
+.music-player audio {
+    width: 100%;
+}
+
+.close-music {
+    position: fixed;
+    top: 18px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    font-size: 30px;
+    color: #777;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    z-index: 10;
+}
+     </style>
 </head>
 
 
@@ -1106,7 +1244,33 @@
 
 </div>
 
+<div id="musicPage" class="music-page">
 
+    <button id="closeMusic" class="close-music">×</button>
+
+    <div class="music-title">
+        <h1>Our Songs 🎵</h1>
+        <p>Pick a song that reminds me of you ♡</p>
+    </div>
+
+    <div class="song-box song1">Aoge Jab Tum ♫</div>
+    <div class="song-box song2">Bin Tere ♡</div>
+    <div class="song-box song3">Bolna ♫</div>
+    <div class="song-box song4">Faasle ♡</div>
+    <div class="song-box song5">Haal-E-Dil ♫</div>
+    <div class="song-box song6">Kabhi Tumhe ♡</div>
+    <div class="song-box song7">O Rangrez ♫</div>
+    <div class="song-box song8">Tu Hi Meri Shab Hai ♡</div>
+    <div class="song-box song9">Zara Sa ♫</div>
+
+    <div class="music-player">
+        <div class="music-note">🎵</div>
+        <h2 id="currentSong">Choose a song</h2>
+
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+</div>
     <!-- =========================
          JAVASCRIPT
     ========================== -->
@@ -1309,6 +1473,48 @@ memoriesChoice.addEventListener("click", function() {
 
 closeMemories.addEventListener("click", function() {
     memoriesPage.style.display = "none";
+});
+
+        const musicChoice = document.getElementById("musicChoice");
+const musicPage = document.getElementById("musicPage");
+const closeMusic = document.getElementById("closeMusic");
+const audioPlayer = document.getElementById("audioPlayer");
+const currentSong = document.getElementById("currentSong");
+
+musicChoice.addEventListener("click", function() {
+    musicPage.style.display = "block";
+});
+
+closeMusic.addEventListener("click", function() {
+    musicPage.style.display = "none";
+    audioPlayer.pause();
+});
+
+        const songs = {
+    "Aoge Jab Tum": "Aaoge Jab Tum Jab We Met 128 Kbps.mp3",
+    "Bin Tere": "Bin Tere I Hate Luv Storys 128 Kbps.mp3",
+    "Bolna": "Bolna Kapoor And Sons 128 Kbps.mp3",
+    "Faasle": "FAASLE(KoshalWorld.Com).mp3",
+    "Haal-E-Dil": "Haal E Dil (female) Sanam Teri Kasam 128 Kbps.mp3",
+    "Kabhi Tumhe": "Kabhi Tumhe Shershaah 128 Kbps.mp3",
+    "O Rangrez": "O Rangrez Bhaag Milkha Bhaag 128 Kbps.mp3",
+    "Tu Hi Meri Shab Hai": "Tu Hi Meri Shab Hai Gangster 128 Kbps.mp3",
+    "Zara Sa": "Zara Sa Jannat 128 Kbps.mp3"
+};
+
+document.querySelectorAll(".song-box").forEach(function(box) {
+    box.addEventListener("click", function() {
+
+        const songName = box.textContent
+            .replace(" ♫", "")
+            .replace(" ♡", "");
+
+        currentSong.textContent = songName;
+
+        audioPlayer.src = encodeURI(songs[songName]);
+
+        audioPlayer.play();
+    });
 });
     </script>
 </body>
