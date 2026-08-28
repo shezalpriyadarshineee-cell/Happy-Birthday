@@ -585,6 +585,226 @@
         transform: translateY(0) scale(1);
     }
 }
+        /* =========================
+   MEMORIES PAGE
+========================= */
+
+.memories-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #fffaf5;
+    padding: 80px 20px 100px;
+    box-sizing: border-box;
+
+    z-index: 90;
+}
+
+.memories-title {
+    text-align: center;
+    font-size: 30px;
+    color: #555;
+    margin: 0 0 8px;
+}
+
+.memories-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.memory-wall {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 2600px;
+    margin: 0 auto;
+}
+
+.memory-photo {
+    position: absolute;
+    width: 190px;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.memory-photo:hover {
+    transform: scale(1.08) rotate(0deg);
+    z-index: 50;
+}
+
+/* Scattered positions */
+
+.photo1 {
+    top: 30px;
+    left: 8%;
+    transform: rotate(-8deg);
+}
+
+.photo2 {
+    top: 100px;
+    right: 10%;
+    transform: rotate(7deg);
+}
+
+.photo3 {
+    top: 260px;
+    left: 28%;
+    transform: rotate(4deg);
+}
+
+.photo4 {
+    top: 350px;
+    left: 5%;
+    transform: rotate(-12deg);
+}
+
+.photo5 {
+    top: 430px;
+    right: 7%;
+    transform: rotate(10deg);
+}
+
+.photo6 {
+    top: 570px;
+    left: 22%;
+    transform: rotate(-5deg);
+}
+
+.photo7 {
+    top: 650px;
+    right: 25%;
+    transform: rotate(8deg);
+}
+
+.photo8 {
+    top: 780px;
+    left: 5%;
+    transform: rotate(6deg);
+}
+
+.photo9 {
+    top: 850px;
+    right: 5%;
+    transform: rotate(-9deg);
+}
+
+.photo10 {
+    top: 990px;
+    left: 30%;
+    transform: rotate(11deg);
+}
+
+.photo11 {
+    top: 1100px;
+    left: 8%;
+    transform: rotate(-7deg);
+}
+
+.photo12 {
+    top: 1160px;
+    right: 15%;
+    transform: rotate(5deg);
+}
+
+.photo13 {
+    top: 1300px;
+    left: 20%;
+    transform: rotate(-11deg);
+}
+
+.photo14 {
+    top: 1380px;
+    right: 5%;
+    transform: rotate(8deg);
+}
+
+.photo15 {
+    top: 1500px;
+    left: 5%;
+    transform: rotate(9deg);
+}
+
+.photo16 {
+    top: 1580px;
+    left: 35%;
+    transform: rotate(-6deg);
+}
+
+.photo17 {
+    top: 1700px;
+    right: 12%;
+    transform: rotate(-10deg);
+}
+
+.photo18 {
+    top: 1810px;
+    left: 12%;
+    transform: rotate(7deg);
+}
+
+.photo19 {
+    top: 1930px;
+    right: 28%;
+    transform: rotate(-5deg);
+}
+
+.photo20 {
+    top: 2050px;
+    left: 5%;
+    transform: rotate(-9deg);
+}
+
+.photo21 {
+    top: 2140px;
+    right: 8%;
+    transform: rotate(10deg);
+}
+
+.photo22 {
+    top: 2280px;
+    left: 25%;
+    transform: rotate(5deg);
+}
+
+.photo23 {
+    top: 2400px;
+    right: 20%;
+    transform: rotate(-8deg);
+}
+
+.close-memories {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+
+    border: none;
+    background: white;
+    border-radius: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 28px;
+    color: #777;
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    z-index: 100;
+}
+
+.close-memories:hover {
+    transform: scale(1.1);
+}
     </style>
 </head>
 
@@ -835,6 +1055,47 @@
 
     </div>
 
+    <!-- =========================
+     MEMORIES PAGE
+========================= -->
+
+<div id="memoriesPage" class="memories-page">
+
+    <button id="closeMemories" class="close-memories">×</button>
+
+    <h1 class="memories-title">Our little memories ♡</h1>
+    <p class="memories-subtitle">A few pieces of us...</p>
+
+    <div class="memory-wall">
+
+        <img src="memory1.jpg" class="memory-photo photo1">
+        <img src="memory2.jpg" class="memory-photo photo2">
+        <img src="memory3.jpg" class="memory-photo photo3">
+        <img src="memory4.JPG" class="memory-photo photo4">
+        <img src="memory5.jpg" class="memory-photo photo5">
+        <img src="memory6.jpg" class="memory-photo photo6">
+        <img src="memory7.jpeg" class="memory-photo photo7">
+        <img src="memory8.jpeg" class="memory-photo photo8">
+        <img src="memory9.jpeg" class="memory-photo photo9">
+        <img src="memory10.jpeg" class="memory-photo photo10">
+        <img src="memory11.jpeg" class="memory-photo photo11">
+        <img src="memory12.jpeg" class="memory-photo photo12">
+        <img src="memory13.jpeg" class="memory-photo photo13">
+        <img src="memory14.jpeg" class="memory-photo photo14">
+        <img src="memory15.jpeg" class="memory-photo photo15">
+        <img src="memory16.jpeg" class="memory-photo photo16">
+        <img src="memory17.jpeg" class="memory-photo photo17">
+        <img src="memory18.jpeg" class="memory-photo photo18">
+        <img src="memory19.jpeg" class="memory-photo photo19">
+        <img src="memory20.jpeg" class="memory-photo photo20">
+        <img src="memory21.jpeg" class="memory-photo photo21">
+        <img src="memory22.jpeg" class="memory-photo photo22">
+        <img src="memory23.jpeg" class="memory-photo photo23">
+
+    </div>
+
+</div>
+
 
     <!-- =========================
          JAVASCRIPT
@@ -1027,6 +1288,18 @@ closeLetter.addEventListener(
         letterPopup.style.display = "none";
     }
 );
+
+                    const memoriesChoice = document.getElementById("memoryChoice");
+const memoriesPage = document.getElementById("memoriesPage");
+const closeMemories = document.getElementById("closeMemories");
+
+memoriesChoice.addEventListener("click", function() {
+    memoriesPage.style.display = "block";
+});
+
+closeMemories.addEventListener("click", function() {
+    memoriesPage.style.display = "none";
+});
     </script>
 </body>
 </html>
