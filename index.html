@@ -497,6 +497,94 @@
 #musicChoice {
     background: #ffe5b4;
 }
+        /* =========================
+   LETTER POPUP
+========================= */
+
+.letter-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    z-index: 100;
+}
+
+.letter-card {
+    position: relative;
+    width: 90%;
+    max-width: 550px;
+    max-height: 75vh;
+
+    background: #fffaf5;
+    border-radius: 20px;
+    padding: 35px 30px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+    animation: letterFadeIn 0.6s ease;
+}
+
+.letter-content {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    text-align: left;
+}
+
+.letter-content h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #555;
+    margin-top: 0;
+}
+
+.letter-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.birthday-ending {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.close-letter {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 30px;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-letter:hover {
+    transform: scale(1.15);
+}
+
+@keyframes letterFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
     </style>
 </head>
 
@@ -657,6 +745,89 @@
         </button>
 
     </div>
+    <div id="letterPopup" class="letter-popup">
+
+    <div class="letter-card">
+
+        <button id="closeLetter" class="close-letter">
+            ×
+        </button>
+
+        <div class="letter-content">
+
+            <h2>My Love,</h2>
+
+            <p>
+                Congratulations! You have officially unlocked a digital
+                letter from your favourite person. I would have given you
+                a real one, but unfortunately, you're inconveniently
+                located far away.
+            </p>
+
+            <p>
+                There are days when words feel too small for what I carry
+                for you in my heart. Loving you has been the most natural
+                yet most extraordinary thing that has happened to me.
+            </p>
+
+            <p>
+                It's funny how someone can be so far away and still somehow
+                be such a huge part of my everyday life. You're in my random
+                thoughts, my little stories, the things I want to tell
+                someone first, and all the moments where I wish you were
+                beside me.
+            </p>
+
+            <p>
+                We've had good days, bad days, silly arguments, ridiculous
+                conversations, but through all of it, I'm grateful that
+                it's you.
+            </p>
+
+            <p>
+                I hate that I can't just reach over and hug you whenever I
+                want. But I love that, despite the distance, you're still
+                my person.
+            </p>
+
+            <p>
+                I don't know what the future holds for us, but I sure know
+                I want you in it. In my good days, the bad ones, and
+                everything in between, I want to be there for you like you
+                have been there for me — steadily, sincerely, and without
+                hesitation.
+            </p>
+
+            <p>
+                I want to build something that feels like home, no matter
+                where we are.
+            </p>
+
+            <p>
+                You are someone I choose in every moment — today, tomorrow,
+                and in every version of tomorrow that I could possibly
+                imagine.
+            </p>
+
+            <p>
+                So until I can give you this properly in person, here's a
+                tiny piece of my heart on a screen. ❤️
+            </p>
+
+            <p class="birthday-ending">
+                Happy Birthday, baby.<br><br>
+
+                I love you.<br>
+                I have always loved you.<br>
+                I love you the most.<br>
+                And I will keep loving you till the death of me. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
 </div>
 
@@ -834,6 +1005,30 @@ nextButton.addEventListener(
     }
 );
     </script>
+    const letterChoice =
+    document.getElementById("letterChoice");
+
+const letterPopup =
+    document.getElementById("letterPopup");
+
+const closeLetter =
+    document.getElementById("closeLetter");
+
+
+letterChoice.addEventListener(
+    "click",
+    function() {
+        letterPopup.style.display = "flex";
+    }
+);
+
+
+closeLetter.addEventListener(
+    "click",
+    function() {
+        letterPopup.style.display = "none";
+    }
+);
 
 </body>
 </html>
