@@ -422,12 +422,17 @@
 
 #pageThree {
     display: none;
-    width: 100%;
-    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
 }
 
 .page-three-title {
@@ -446,10 +451,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 20px;
     flex-wrap: wrap;
+
     width: 100%;
-    max-width: 420px;
+    max-width: 500px;
     margin: 0 auto;
 }
 .choice-button {
