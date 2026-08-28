@@ -422,8 +422,12 @@
 
 #pageThree {
     display: none;
-    text-align: center;
     width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .page-three-title {
@@ -445,9 +449,9 @@
     gap: 20px;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 420px;
     margin: 0 auto;
 }
-
 .choice-button {
     width: 120px;
     height: 120px;
@@ -819,7 +823,7 @@ nextButton.addEventListener(
     "click",
     function() {
         pageTwo.style.display = "none";
-        pageThree.style.display = "block";
+        pageThree.style.display = "flex";
     }
 );
     </script>
