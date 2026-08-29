@@ -1039,7 +1039,55 @@
     box-shadow: 0 15px 40px rgba(100, 60, 60, 0.2);
     overflow: hidden;
 }
+/* WINDOW */
 
+.window {
+    position: absolute;
+    top: 3%;
+    left: 36%;
+    width: 30%;
+    height: 20%;
+    background: #d6a890;
+    border: 8px solid #b9826f;
+    border-radius: 22px;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 0 8px 15px rgba(100, 60, 50, 0.18);
+}
+
+.window-sky {
+    width: 100%;
+    height: 100%;
+    background: #cfeaf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    letter-spacing: 12px;
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 24%;
+    height: 100%;
+    background: #f3c6cf;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(100, 60, 60, 0.12);
+}
+
+.curtain-left {
+    left: 0;
+    border-radius: 0 0 18px 0;
+}
+
+.curtain-right {
+    right: 0;
+    border-radius: 0 0 0 18px;
+}
 .kitchen-message {
     position: absolute;
     top: 50%;
@@ -1092,6 +1140,7 @@
         linear-gradient(rgba(255,255,255,0.18) 2px, transparent 2px);
     background-size: 55px 55px;
     background-color: #f4dfd2;
+        box-shadow: inset 0 0 35px rgba(130, 90, 80, 0.12);
 }
 
 /* counters */
@@ -1133,7 +1182,39 @@
     font-size: 48px;
     box-shadow: 0 6px 10px rgba(80, 50, 40, 0.15);
 }
+/* CUTE TOP-DOWN STOVE */
 
+.stove {
+    background: #ead9d4;
+    border: 6px solid #b98f83;
+    border-radius: 18px;
+    box-shadow: 0 8px 14px rgba(80, 50, 40, 0.18);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    z-index: 4;
+}
+
+.burner {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #c19a91;
+    border: 6px solid #9f7770;
+    box-shadow: inset 0 0 0 5px #e5c9c2;
+}
+
+.burner::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 9px auto;
+    border-radius: 50%;
+    background: #8d6862;
+}
 /* oven */
 .oven {
     position: absolute;
@@ -1150,7 +1231,65 @@
     font-size: 48px;
     box-shadow: 0 7px 14px rgba(80, 50, 40, 0.18);
 }
+/* CUTE TOP-DOWN OVEN */
 
+.oven {
+    background: #e6cbc0;
+    border: 6px solid #b98f83;
+    border-radius: 18px;
+    box-shadow: 0 8px 15px rgba(80, 50, 40, 0.18);
+    z-index: 4;
+    padding: 12px;
+}
+
+.oven-window {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 35px;
+    bottom: 35px;
+    background: #7d6868;
+    border: 5px solid #a98279;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.oven-window::after {
+    content: "🧁";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 38px;
+    opacity: 0.8;
+}
+
+.oven-handle {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    right: 30px;
+    height: 8px;
+    background: #9f7770;
+    border-radius: 10px;
+}
+
+.oven-knob {
+    position: absolute;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #9f7770;
+}
+
+.knob-one {
+    right: 28px;
+}
+
+.knob-two {
+    right: 48px;
+}
 /* ingredient cupboard */
 .cupboard {
     position: absolute;
@@ -1180,6 +1319,42 @@
     border-radius: 10px;
 }
 
+        /* PRETTY INGREDIENT CUPBOARD */
+
+.cupboard {
+    background: #e8d6c8;
+    border: 6px solid #b58c7b;
+    border-radius: 18px;
+    box-shadow: 0 8px 15px rgba(80, 50, 40, 0.16);
+    overflow: hidden;
+}
+
+.cupboard-label {
+    background: #d9b4a5;
+    color: #fffaf7;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 8px;
+    border-radius: 12px 12px 0 0;
+}
+
+.cupboard-door {
+    background: #f0ddd3;
+    border: 3px solid #c49d8e;
+    border-radius: 12px;
+    min-height: 100px;
+    position: relative;
+}
+
+.cupboard-door::before {
+    content: "🌾   🥚   🧈   🍫";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    white-space: nowrap;
+}
 /* fridge */
 .fridge {
     position: absolute;
@@ -1196,7 +1371,45 @@
     font-size: 50px;
     box-shadow: 0 7px 14px rgba(80, 50, 50, 0.15);
 }
+.fridge {
+    position: absolute;
+    top: 28%;
+    left: 5%;
+    width: 135px;
+    height: 230px;
+    background: #e8dfe3;
+    border: 6px solid #b9a3aa;
+    border-radius: 18px;
+    box-shadow: 0 8px 15px rgba(80, 50, 50, 0.15);
+    z-index: 4;
+}
 
+.fridge-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    border-bottom: 5px solid #b9a3aa;
+}
+
+.fridge-handle {
+    position: absolute;
+    top: 30px;
+    right: 12px;
+    width: 7px;
+    height: 65px;
+    background: #9f858e;
+    border-radius: 10px;
+}
+
+.fridge-note {
+    position: absolute;
+    bottom: 30px;
+    left: 38px;
+    font-size: 28px;
+    transform: rotate(-8deg);
+}
 /* table */
 .table {
     position: absolute;
@@ -1840,21 +2053,43 @@ document.querySelectorAll(".song-box").forEach(function(box) {
         🎂 Bake a Cake for Me 🎂
     </div>
 <div class="kitchen">
+    <div class="window">
+    <div class="window-sky">
+        ☁️ ☀️ ☁️
+    </div>
+
+    <div class="curtain curtain-left">🌸</div>
+    <div class="curtain curtain-right">🌸</div>
+</div>
 
     <div class="floor"></div>
 
     <div class="counter counter-top"></div>
     <div class="counter counter-left"></div>
 
-    <div class="stove">🍳</div>
-    <div class="oven">🔥</div>
+    <div class="stove">
+    <div class="burner burner-one"></div>
+    <div class="burner burner-two"></div>
+    <div class="burner burner-three"></div>
+    <div class="burner burner-four"></div>
+</div>
+    <div class="oven">
+    <div class="oven-window"></div>
+    <div class="oven-handle"></div>
+    <div class="oven-knob knob-one"></div>
+    <div class="oven-knob knob-two"></div>
+</div>
 
     <div class="cupboard">
         <div class="cupboard-label">🗄️ Ingredients</div>
         <div class="cupboard-door"></div>
     </div>
 
-    <div class="fridge">🧊</div>
+    <div class="fridge">
+    <div class="fridge-top"></div>
+    <div class="fridge-handle"></div>
+    <div class="fridge-note">♡</div>
+</div>
 
     <div class="table">
         <div class="table-top">🌷</div>
