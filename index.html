@@ -1000,6 +1000,254 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     z-index: 10;
 }
+        /* BAKING GAME */
+
+.game-page {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f9e7e7;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.game-title {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    font-weight: bold;
+    color: #8b5e5e;
+    z-index: 5;
+}
+
+.kitchen {
+    position: relative;
+    width: 92vw;
+    height: 82vh;
+    max-width: 1400px;
+    max-height: 850px;
+    background: #f6d9c9;
+    border: 10px solid #d9a98f;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(100, 60, 60, 0.2);
+    overflow: hidden;
+}
+
+.kitchen-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    background: rgba(255, 250, 245, 0.9);
+    border-radius: 20px;
+    color: #8b5e5e;
+    font-size: 24px;
+    text-align: center;
+}
+
+#startBaking {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #e9a6a6;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.2);
+}
+        /* COZY BAKING GAME KITCHEN */
+
+.kitchen {
+    position: relative;
+    width: 92vw;
+    height: 82vh;
+    max-width: 1400px;
+    max-height: 850px;
+    background: #f3dfd0;
+    border: 10px solid #d8b09a;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(100, 70, 60, 0.2);
+    overflow: hidden;
+}
+
+/* pastel floor */
+.floor {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.18) 2px, transparent 2px),
+        linear-gradient(rgba(255,255,255,0.18) 2px, transparent 2px);
+    background-size: 55px 55px;
+    background-color: #f4dfd2;
+}
+
+/* counters */
+.counter {
+    position: absolute;
+    background: #d8b49f;
+    border: 5px solid #c49780;
+    border-radius: 18px;
+    box-shadow: 0 7px 12px rgba(100, 70, 60, 0.15);
+}
+
+.counter-top {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 17%;
+}
+
+.counter-left {
+    top: 5%;
+    left: 5%;
+    width: 17%;
+    height: 75%;
+}
+
+/* stove */
+.stove {
+    position: absolute;
+    top: 8%;
+    right: 17%;
+    width: 145px;
+    height: 110px;
+    background: #ead7d0;
+    border: 6px solid #b98f83;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    box-shadow: 0 6px 10px rgba(80, 50, 40, 0.15);
+}
+
+/* oven */
+.oven {
+    position: absolute;
+    top: 27%;
+    right: 7%;
+    width: 150px;
+    height: 190px;
+    background: #e6cbc0;
+    border: 6px solid #b98f83;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    box-shadow: 0 7px 14px rgba(80, 50, 40, 0.18);
+}
+
+/* ingredient cupboard */
+.cupboard {
+    position: absolute;
+    top: 27%;
+    left: 27%;
+    width: 190px;
+    height: 150px;
+    background: #e7c4ad;
+    border: 6px solid #b98f83;
+    border-radius: 18px;
+    box-shadow: 0 7px 12px rgba(80, 50, 40, 0.15);
+}
+
+.cupboard-label {
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    color: #795548;
+}
+
+.cupboard-door {
+    width: 125px;
+    height: 70px;
+    margin: 2px auto;
+    background: #f2d8c8;
+    border: 4px solid #c79d87;
+    border-radius: 10px;
+}
+
+/* fridge */
+.fridge {
+    position: absolute;
+    top: 28%;
+    left: 5%;
+    width: 135px;
+    height: 230px;
+    background: #e7d9dc;
+    border: 6px solid #b7a0a5;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    box-shadow: 0 7px 14px rgba(80, 50, 50, 0.15);
+}
+
+/* table */
+.table {
+    position: absolute;
+    bottom: 8%;
+    left: 36%;
+    width: 310px;
+    height: 160px;
+    background: #d4aa91;
+    border: 7px solid #b8876d;
+    border-radius: 80px;
+    box-shadow: 0 10px 15px rgba(80, 50, 40, 0.18);
+}
+
+.table-top {
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+}
+
+/* plants */
+.plant {
+    position: absolute;
+    font-size: 55px;
+}
+
+.plant-left {
+    bottom: 8%;
+    left: 7%;
+}
+
+.plant-right {
+    bottom: 8%;
+    right: 7%;
+}
+
+/* mixing area */
+.mixing-area {
+    position: absolute;
+    bottom: 30%;
+    left: 47%;
+    width: 120px;
+    height: 100px;
+    background: #fff3ea;
+    border: 5px solid #d3aa96;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    box-shadow: 0 6px 12px rgba(80, 50, 40, 0.15);
+}
      </style>
 </head>
 
@@ -1158,6 +1406,10 @@
             <span class="choice-icon">🎵</span>
             <span>MUSIC</span>
         </button>
+        <button class="choice-button" id="bakingChoice">
+    <span class="choice-icon">🎂</span>
+    <span>Bake a Cake</span>
+</button>
 
     </div>
     <div id="letterPopup" class="letter-popup">
@@ -1579,6 +1831,59 @@ document.querySelectorAll(".song-box").forEach(function(box) {
         audioPlayer.play();
     });
 });
+       const bakingGame = document.getElementById("bakingGame");
+const startBaking = document.getElementById("startBaking");
+
+startBaking.addEventListener("click", function () {
+    bakingGame.style.display = "flex";
+}); 
     </script>
+    <!-- BAKING GAME -->
+<div id="bakingGame" class="game-page">
+
+    <div class="game-title">
+        🎂 Bake a Cake for Me 🎂
+    </div>
+<div class="kitchen">
+
+    <div class="floor"></div>
+
+    <div class="counter counter-top"></div>
+    <div class="counter counter-left"></div>
+
+    <div class="stove">🍳</div>
+    <div class="oven">🔥</div>
+
+    <div class="cupboard">
+        <div class="cupboard-label">🗄️ Ingredients</div>
+        <div class="cupboard-door"></div>
+    </div>
+
+    <div class="fridge">🧊</div>
+
+    <div class="table">
+        <div class="table-top">🌷</div>
+    </div>
+
+    <div class="plant plant-left">🪴</div>
+    <div class="plant plant-right">🪴</div>
+
+    <div class="mixing-area">
+        🥣
+    </div>
+
+</div>
+   
+
+    <button id="startBaking">Start Baking 💕</button>
+
+</div>
+   <script>
+const bakingChoice = document.getElementById("bakingChoice");
+
+bakingChoice.addEventListener("click", function () {
+    bakingGame.style.display = "flex";
+});
+</script> 
 </body>
 </html>
