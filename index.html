@@ -1874,16 +1874,12 @@ document.querySelectorAll(".song-box").forEach(function(box) {
 
 </div>
     <script>
-const bakingGame = document.getElementById("bakingGame");
-const bakingChoice = document.getElementById("bakingChoice");
-const startBaking = document.getElementById("startBaking");
+document.addEventListener("click", function(event) {
 
-bakingChoice.addEventListener("click", function () {
-    bakingGame.style.display = "flex";
-});
+    if (event.target.closest("#bakingChoice")) {
+        document.getElementById("bakingGame").style.display = "flex";
+    }
 
-startBaking.addEventListener("click", function () {
-    bakingGame.style.display = "flex";
 });
 </script>
 </body>
