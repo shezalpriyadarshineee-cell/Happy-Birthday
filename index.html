@@ -1831,12 +1831,7 @@ document.querySelectorAll(".song-box").forEach(function(box) {
         audioPlayer.play();
     });
 });
-       const bakingGame = document.getElementById("bakingGame");
-const startBaking = document.getElementById("startBaking");
-
-startBaking.addEventListener("click", function () {
-    bakingGame.style.display = "flex";
-}); 
+      
     </script>
     <!-- BAKING GAME -->
 <div id="bakingGame" class="game-page">
@@ -1878,12 +1873,18 @@ startBaking.addEventListener("click", function () {
     <button id="startBaking">Start Baking 💕</button>
 
 </div>
-   <script>
+    <script>
+const bakingGame = document.getElementById("bakingGame");
 const bakingChoice = document.getElementById("bakingChoice");
+const startBaking = document.getElementById("startBaking");
 
 bakingChoice.addEventListener("click", function () {
     bakingGame.style.display = "flex";
 });
-</script> 
+
+startBaking.addEventListener("click", function () {
+    bakingGame.style.display = "flex";
+});
+</script>
 </body>
 </html>
